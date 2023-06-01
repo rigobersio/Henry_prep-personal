@@ -204,6 +204,7 @@ Math.ceil(6.0001) = 7;
 #### .length
 
 El tipo de datos "string" tiene un método incorporado llamado `.length`. Cualquier cadena que llamemos a esto devolverá la cantidad de caracteres en esa cadena.
+NOTA .length no es una función o dicho de otra manera no es un método de los string  ES UN ATRIBUTO: La propiedad .length es una propiedad integrada de los strings que devuelve la cantidad de caracteres en el string
 
 ```javascript
 var nombreGato = 'felix';
