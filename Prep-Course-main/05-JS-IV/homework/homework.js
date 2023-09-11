@@ -9,8 +9,9 @@ function crearGato (nombre, edad) {
   var objeto = {
     nombre,
     edad,
-    meow : () => 'Meow',
-  }
+    meow : () => 'Meow!',
+  };
+  return objeto;
 }
 
 function agregarPropiedad (objeto, property) {
@@ -18,7 +19,7 @@ function agregarPropiedad (objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-    objeto.property = null;
+    objeto[property] = null;
     return objeto;
 }
 
@@ -27,7 +28,7 @@ function invocarMetodo (objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
-  objeto.metodo();
+  objeto[metodo]();
 }
 
 function multiplicarNumeroDesconocidoPorCinco (objetoMisterioso) {
@@ -42,7 +43,7 @@ function eliminarPropiedad (objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
-  delete objeto['unaPropiedad'];
+  delete objeto[unaPropiedad];
   return objeto;
 }
 
@@ -61,7 +62,7 @@ function tieneEmail (usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contrario, devuelve "false"
   // Tu código:
-  return usuario.email !== undefined;
+  return usuario.email !== undefined && usuario.email !== null;
 }
 
 function tienePropiedad (objeto, propiedad) {
@@ -104,7 +105,7 @@ function pasarUsuarioAPremium (usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
-  for (var i = 0; i < array.length; i++) {
+  for (var i = 0; i < usuarios.length; i++) {
     usuarios[i].esPremium = true;
   };
   return usuarios;
@@ -117,7 +118,7 @@ function sumarLikesDeUsuario (usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
-  var sumaLikes;
+  var sumaLikes = 0;
   for (let i = 0; i < usuario.posts.length; i++) {
      sumaLikes += usuario.posts[i].likes;
   };
